@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const p=JSON.parse(fs.readFileSync('PROOFS.json','utf8'));
+assert(p.final_readback_verified&&p.source.source_match&&p.rejected_requests_absent);
+assert(p.transactions.length===10&&p.transactions.every(t=>t.verified&&t.status==='FINALIZED'&&t.consensus==='MAJORITY_AGREE'));
+const explorer='https://explorer-studio.genlayer.com',repo='https://github.com/stoneforger10/temporal-possibility-atlas';
+const tx=x=>explorer+'/tx/'+x,contract=explorer+'/address/'+p.address;
+const title='TemporalPossibilityAtlas — Consensus-Grounded Interval Possibilities';
+const description=`TemporalPossibilityAtlas is a reusable interval-reasoning primitive, not a mutable graph or certificate. For two or three named intervals, the leader and validators independently fetch a commit-pinned HTTPS document and interpret all thirteen Allen relations for every pair. Exact consensus binds the full source, hash, context and normalized relation sets; no confidence tolerance is used.
+
+An exhaustive solver retains every compatible endpoint ordering and records its count, digest and witnesses. Root-bound queries return NECESSARY, POSSIBLE or IMPOSSIBLE. Missing information preserves alternatives; inconsistent constraints or failed acquisition return NO_CLAIM.
+
+StudioNet proofs cover transitive necessity, ambiguity, a global contradiction, missing timing, hash mismatch and rejected replay/unsafe inputs. Independent readback checks deployed source and solver results. It analyzes authored scheduling specifications, not actual event occurrence. Demo documents are fictional.`;
+assert(title.length<=80&&description.length<=1000);
+let live=`# Live proof ledger\n\nNetwork: gasless StudioNet, chain 61999. Experimental deployment; no value transfer.\n\n[Contract](${contract}) · [source](${repo}/blob/main/contracts/TemporalPossibilityAtlas.py) · [machine-readable ledger](PROOFS.json)\n\nSource normalized SHA-256: \`${p.source.sha256}\`. Fixture commit: \`${p.fixture_commit}\`.\n\n## Transaction proof matrix\n\n| Case | Final execution | Consensus | Transaction |\n| --- | --- | --- | --- |\n`;
+for(const t of p.transactions)live+=`| ${t.step} | ${t.execution}${t.expected_message?' — expected '+t.expected_message:''} | ${t.consensus} | [receipt](${tx(t.hash)}) |\n`;
+live+='\nSix transactions executed successfully (deployment plus five immutable analyses). Four executed with expected ERROR; they are rejection evidence, not successful business operations. All ten finalized with MAJORITY_AGREE.\n\n## Independently checked state\n\n| Analysis | Status | Surviving orders | Record root |\n| --- | --- | --- | --- |\n';
+for(const [name,x] of Object.entries(p.analyses))live+=`| ${name} | ${x.state.status} | ${x.state.envelope.world_count} | \`${x.state.root}\` |\n`;
+live+='\n## Read-only query checks\n\nThese are state readbacks, not additional transactions.\n\n| Analysis key | Pair and relation | Result |\n| --- | --- | --- |\n';
+for(const q of p.queries)live+=`| \`${q.key.slice(0,12)}…\` | ${q.left} / ${q.right} — ${q.label} | ${q.result.answer} |\n`;
+live+='\n## Verification scope\n\n`verify-live.mjs` independently checks finalized receipts and execution, deployed/local source equality, source bytes/hash/context, immutable roots, all five envelopes against a separate Cartesian endpoint oracle, all nine saved queries and rejected-request absence. All writes use one dedicated native test signer; signer identity is not evidence of validator independence. Live distributed disagreement was not induced. The callback test demonstrates rejection of a well-shaped wrong semantic answer locally.\n\n42 Python direct/helper/callback tests, 3 JavaScript oracle tests and 5 SDK roundtrips passed. Exhaustive local cases include 2,197 atomic three-interval networks and 8,192 two-interval subsets. Lint and SDK validation passed.\n\nFictional source specifications establish conditional document constraints only; neither fetching nor hashing verifies actual event occurrence. Exact semantic consensus can still be wrong. No global-novelty, audited-production or reviewer-acceptance guarantee.\n';
+fs.writeFileSync('LIVE_PROOFS.md',live);
+const urls=[repo,repo+'/blob/main/contracts/TemporalPossibilityAtlas.py',repo+'/blob/main/README.md',repo+'/blob/main/LIVE_PROOFS.md',contract,...p.transactions.filter(t=>t.step==='deploy'||t.step.startsWith('analyze-')||['input-resampling','nonce-replay'].includes(t.step)).map(t=>tx(t.hash))];
+fs.writeFileSync('SUBMISSION.md',`# Ready-to-fill submission\n\nContribution type: Builder → Intelligent Contracts\n\n## Title (${title.length}/80)\n\n${title}\n\n## Notes / Description (${description.length}/1000)\n\n${description}\n\n## Evidence URLs\n\n${urls.map(u=>'- '+u).join('\n')}\n\nExperimental StudioNet deployment. No claim of observed delivery, factual event occurrence, audited production readiness or guaranteed novelty/acceptance.\n`);
+console.log(JSON.stringify({title_chars:title.length,description_chars:description.length,transactions:p.transactions.length}));

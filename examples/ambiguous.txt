@@ -1,0 +1,5 @@
+Fictional scheduling specification, not a real event report.
+ALPHA and BETA are proper intervals. ALPHA starts strictly earlier than BETA starts.
+ALPHA also ends strictly earlier than BETA ends.
+It is deliberately unspecified whether ALPHA ends before, exactly when, or after BETA starts.
+Do not invent a gap, meeting, or overlap beyond these inequalities.

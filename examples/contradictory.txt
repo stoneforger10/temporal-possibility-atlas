@@ -1,0 +1,5 @@
+Fictional requirements, not actual observed events. ALPHA, BETA and GAMMA are proper intervals.
+ALPHA must finish strictly before BETA starts.
+BETA must finish strictly before GAMMA starts.
+GAMMA must finish strictly before ALPHA starts.
+All three requirements are simultaneously mandatory. None overrides another.

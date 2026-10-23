@@ -1,0 +1,5 @@
+Fictional scheduling specification. This is not a report of real operations.
+ALPHA, BETA and GAMMA each denote one proper interval with a start before its end.
+The whole ALPHA interval finishes strictly before BETA starts; the gap is positive.
+BETA finishes at exactly the instant GAMMA starts. They meet; they do not overlap.
+There is no additional direct statement about ALPHA and GAMMA.

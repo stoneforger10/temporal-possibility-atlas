@@ -1,0 +1,3 @@
+Fictional event vocabulary: ALPHA and BETA are proper intervals.
+This document supplies no information about their relative timing.
+Descriptions of color and importance do not imply any temporal order.
