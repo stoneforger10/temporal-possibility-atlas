@@ -23,7 +23,7 @@ async function tx(step,args,expected='SUCCESS',message){
   const latest=await rpc('eth_getTransactionCount',[account.address,'latest']),pending=await rpc('eth_getTransactionCount',[account.address,'pending']);
   assert.equal(latest,pending,'Signer has pending transactions');
   entry={step,signer:account.address,expected,cli_arguments:args,nonce_before:latest,broadcast_unknown:true,verified:false,...(message?{expected_message:message}:{})};
-  p.transactions.push(entry);save();await broadcast(args,hash=>{entry.hash=hash;delete entry.broadcast_unknown;save();console.log(step+' '+hash);});
+  p.transactions.push(entry);save();entry.cli_exit=await broadcast(args,hash=>{entry.hash=hash;delete entry.broadcast_unknown;save();console.log(step+' '+hash);});save();
  }
  if(!entry.hash)throw Error('Unknown broadcast outcome; audit history before any retry');
  assert.equal(canonical(entry.cli_arguments),canonical(args));
@@ -69,6 +69,8 @@ try{
  for(const x of Object.values(p.analyses))assert.equal(canonical(await analysisState(p.address,x.key)),canonical(x.state));
  for(const nonce of ['resample','bad-order','unsafe'])assert(await denied(p.address,'get_request',[account.address,nonce]));
  p.rejected_requests_absent=true;p.source=await source(p.address);
+ const history=await rpc('sim_getTransactionsForAddress',[p.address]);
+ assert.deepEqual(history.map(t=>t.hash).sort(),p.transactions.map(t=>t.hash).sort());p.contract_history_matched=true;
  assert(p.transactions.length===10&&p.transactions.every(t=>t.verified&&t.hash&&!t.broadcast_unknown));p.final_readback_verified=true;save();
  console.log(JSON.stringify({complete:true,address:p.address,transactions:p.transactions.length,analyses:Object.keys(p.analyses).length,queries:p.queries.length}));
 }catch(e){console.error('Sanitized workflow stopped at '+phase+' ('+(e instanceof assert.AssertionError?'assertion':'network/receipt check')+'); inspect journal before retry');process.exitCode=1;}

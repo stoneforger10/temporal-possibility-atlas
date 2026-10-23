@@ -1,0 +1,1033 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "fixture_commit": "38547d7d41baa5fb0625bbbfd612068fb323861f",
+  "account": {
+    "name": "studio-proof-deployer",
+    "address": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42"
+  },
+  "transactions": [
+    {
+      "step": "deploy",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "SUCCESS",
+      "cli_arguments": [
+        "deploy",
+        "--contract",
+        "contracts/TemporalPossibilityAtlas.py"
+      ],
+      "nonce_before": "0x178",
+      "verified": true,
+      "hash": "0x475b4368954e67ebea076b1dc16d4d5d97bee72acf61a4cb795ed0d525967c45",
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "analyze-ordered",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "SUCCESS",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "ordered",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt",
+        "2f92899a0e8f25b59df862f2683f67c6cc6ca0a711ce96def8af39745f89b314",
+        "ALPHA,BETA,GAMMA"
+      ],
+      "nonce_before": "0x179",
+      "verified": true,
+      "hash": "0xf4977283a0e54e687334fc688f8edf1c2132c9ed2aa0c540134115e0a7753b40",
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 1,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "analyze-ambiguous",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "SUCCESS",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "ambiguous",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ambiguous.txt",
+        "07d18aabf36015c98990c166ba232205a157e940a9b58d8ac35d933a22b67d44",
+        "ALPHA,BETA"
+      ],
+      "nonce_before": "0x17a",
+      "verified": true,
+      "hash": "0x304738dcf407767b13fc4bb8bd70be3238822ebb5d5bcf765d0c21cde14579d0",
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "analyze-contradictory",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "SUCCESS",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "contradictory",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/contradictory.txt",
+        "74eb3d7d121461320eeaf45d0986f30462475d9bf2576db7d2cfd3f3e2375c26",
+        "ALPHA,BETA,GAMMA"
+      ],
+      "nonce_before": "0x17b",
+      "verified": true,
+      "hash": "0xfdc0870e48e936b3c8a16b81d2b671a611666786d7f2e074d537c488b8ba7309",
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "analyze-unknown",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "SUCCESS",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "unknown",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/unknown.txt",
+        "6a5a7ccab04f9ade8de6ae71ccd6ed0ac60e16ecfb3dbceb47acf435c298e908",
+        "ALPHA,BETA"
+      ],
+      "nonce_before": "0x17c",
+      "verified": true,
+      "hash": "0xd8e41890017f12deea41506789fb93fed7eeb1d87e2785e8a6a654fd0dcb3ba1",
+      "cli_exit": 0,
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "analyze-ordered-bad",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "SUCCESS",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "ordered-bad",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt",
+        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "ALPHA,BETA,GAMMA"
+      ],
+      "nonce_before": "0x17d",
+      "verified": true,
+      "hash": "0xaa8d602afaa5405c53120d44cbbd13a03187baaeb743788adc6d0a8ac7c12d5d",
+      "cli_exit": 0,
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "input-resampling",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "ERROR",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "resample",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt",
+        "2f92899a0e8f25b59df862f2683f67c6cc6ca0a711ce96def8af39745f89b314",
+        "ALPHA,BETA,GAMMA"
+      ],
+      "nonce_before": "0x17e",
+      "verified": true,
+      "expected_message": "Input already analyzed",
+      "hash": "0x17c7abaaa456058c76e9dbfb2c037ff84231d0ee8896b23fff347d2270fc3708",
+      "cli_exit": 0,
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "nonce-replay",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "ERROR",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "ordered",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/unknown.txt",
+        "6a5a7ccab04f9ade8de6ae71ccd6ed0ac60e16ecfb3dbceb47acf435c298e908",
+        "ALPHA,BETA"
+      ],
+      "nonce_before": "0x17f",
+      "verified": true,
+      "expected_message": "Nonce already used",
+      "hash": "0xe3a0ab4e1b08c17be9277a7280ea5679e62a8f144b374d64d886cd304693249a",
+      "cli_exit": 0,
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 3,
+      "idle_votes": 2,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "invalid-event-order",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "ERROR",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "bad-order",
+        "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt",
+        "2f92899a0e8f25b59df862f2683f67c6cc6ca0a711ce96def8af39745f89b314",
+        "BETA,ALPHA"
+      ],
+      "nonce_before": "0x180",
+      "verified": true,
+      "expected_message": "Invalid analysis request",
+      "hash": "0x26f152d85c4f2ae59bb67e480f3c7dc7ebaeec8932376e75b142dff7770a9e2b",
+      "cli_exit": 0,
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 5,
+      "idle_votes": 0,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    },
+    {
+      "step": "unsafe-url",
+      "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+      "expected": "ERROR",
+      "cli_arguments": [
+        "write",
+        "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+        "analyze",
+        "--args",
+        "unsafe",
+        "https://evil.invalid/x",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "ALPHA,BETA"
+      ],
+      "nonce_before": "0x181",
+      "verified": true,
+      "expected_message": "Invalid analysis request",
+      "hash": "0x66cc4f31ccbb1fbd8734bf7976f52e6cfd7f804e353557a76f952e751c731f0f",
+      "cli_exit": 0,
+      "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false,
+      "leader_only": false,
+      "initial_validators": 5,
+      "agree_votes": 4,
+      "idle_votes": 1,
+      "disagree_votes": 0,
+      "validator_execution_seen": true
+    }
+  ],
+  "analyses": {
+    "ordered": {
+      "key": "cd781d859154da5bb49cffd8e156973e3e3c92cbf8a22dc8111fa0490d0972c0",
+      "state": {
+        "envelope": {
+          "pairs": [
+            {
+              "left": "ALPHA",
+              "possible": [
+                "BEFORE"
+              ],
+              "right": "BETA",
+              "witnesses": [
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    3,
+                    4
+                  ],
+                  "relation": "BEFORE"
+                }
+              ]
+            },
+            {
+              "left": "ALPHA",
+              "possible": [
+                "BEFORE"
+              ],
+              "right": "GAMMA",
+              "witnesses": [
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    3,
+                    4
+                  ],
+                  "relation": "BEFORE"
+                }
+              ]
+            },
+            {
+              "left": "BETA",
+              "possible": [
+                "MEETS"
+              ],
+              "right": "GAMMA",
+              "witnesses": [
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    3,
+                    4
+                  ],
+                  "relation": "MEETS"
+                }
+              ]
+            }
+          ],
+          "world_count": 1,
+          "worlds_root": "0525d5209c2426f64a4a8fc9a26c2effd8c46b1d5460bec61fefccc29fd57088"
+        },
+        "input_root": "cd781d859154da5bb49cffd8e156973e3e3c92cbf8a22dc8111fa0490d0972c0",
+        "report": {
+          "constraints": {
+            "pairs": [
+              {
+                "left": "ALPHA",
+                "relations": [
+                  "BEFORE"
+                ],
+                "right": "BETA"
+              },
+              {
+                "left": "ALPHA",
+                "relations": [
+                  "BEFORE",
+                  "MEETS",
+                  "OVERLAPS",
+                  "STARTS",
+                  "DURING",
+                  "FINISHES",
+                  "EQUALS",
+                  "FINISHED_BY",
+                  "CONTAINS",
+                  "STARTED_BY",
+                  "OVERLAPPED_BY",
+                  "MET_BY",
+                  "AFTER"
+                ],
+                "right": "GAMMA"
+              },
+              {
+                "left": "BETA",
+                "relations": [
+                  "MEETS"
+                ],
+                "right": "GAMMA"
+              }
+            ]
+          },
+          "source": {
+            "body": "Fictional scheduling specification. This is not a report of real operations.\nALPHA, BETA and GAMMA each denote one proper interval with a start before its end.\nThe whole ALPHA interval finishes strictly before BETA starts; the gap is positive.\nBETA finishes at exactly the instant GAMMA starts. They meet; they do not overlap.\nThere is no additional direct statement about ALPHA and GAMMA.\n",
+            "hash": "2f92899a0e8f25b59df862f2683f67c6cc6ca0a711ce96def8af39745f89b314",
+            "http": 200,
+            "status": "OK",
+            "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt"
+          },
+          "spec": {
+            "contract": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+            "events": [
+              "ALPHA",
+              "BETA",
+              "GAMMA"
+            ],
+            "policy": "temporal-possibility-atlas-v1",
+            "source": {
+              "sha256": "2f92899a0e8f25b59df862f2683f67c6cc6ca0a711ce96def8af39745f89b314",
+              "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt"
+            }
+          }
+        },
+        "root": "07a896482a0a7e37d77f791c17828b41373572060b67767760790b3f6a161b60",
+        "status": "DETERMINED"
+      }
+    },
+    "ambiguous": {
+      "key": "c85a409602af20da406535a790d389e393fa4abb7e8d3ace9f923953b6d80004",
+      "state": {
+        "envelope": {
+          "pairs": [
+            {
+              "left": "ALPHA",
+              "possible": [
+                "BEFORE",
+                "MEETS",
+                "OVERLAPS"
+              ],
+              "right": "BETA",
+              "witnesses": [
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "relation": "BEFORE"
+                },
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    1,
+                    2
+                  ],
+                  "relation": "MEETS"
+                },
+                {
+                  "ranks": [
+                    0,
+                    2,
+                    1,
+                    3
+                  ],
+                  "relation": "OVERLAPS"
+                }
+              ]
+            }
+          ],
+          "world_count": 3,
+          "worlds_root": "066b58a09ce22830a2dea576d6963af4794c237f39ba9a53644e202e91323845"
+        },
+        "input_root": "c85a409602af20da406535a790d389e393fa4abb7e8d3ace9f923953b6d80004",
+        "report": {
+          "constraints": {
+            "pairs": [
+              {
+                "left": "ALPHA",
+                "relations": [
+                  "BEFORE",
+                  "MEETS",
+                  "OVERLAPS"
+                ],
+                "right": "BETA"
+              }
+            ]
+          },
+          "source": {
+            "body": "Fictional scheduling specification, not a real event report.\nALPHA and BETA are proper intervals. ALPHA starts strictly earlier than BETA starts.\nALPHA also ends strictly earlier than BETA ends.\nIt is deliberately unspecified whether ALPHA ends before, exactly when, or after BETA starts.\nDo not invent a gap, meeting, or overlap beyond these inequalities.\n",
+            "hash": "07d18aabf36015c98990c166ba232205a157e940a9b58d8ac35d933a22b67d44",
+            "http": 200,
+            "status": "OK",
+            "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ambiguous.txt"
+          },
+          "spec": {
+            "contract": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+            "events": [
+              "ALPHA",
+              "BETA"
+            ],
+            "policy": "temporal-possibility-atlas-v1",
+            "source": {
+              "sha256": "07d18aabf36015c98990c166ba232205a157e940a9b58d8ac35d933a22b67d44",
+              "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ambiguous.txt"
+            }
+          }
+        },
+        "root": "b2c2f21cbd64959955639319bcd6949297c04eef4aa34c2b7e2bf13d32c0d5b6",
+        "status": "AMBIGUOUS"
+      }
+    },
+    "contradictory": {
+      "key": "da1dffbd619fc9c0258d26496064f1717ba4ed5c52eb5239f4a3984120df7697",
+      "state": {
+        "envelope": {
+          "pairs": [
+            {
+              "left": "ALPHA",
+              "possible": [],
+              "right": "BETA",
+              "witnesses": []
+            },
+            {
+              "left": "ALPHA",
+              "possible": [],
+              "right": "GAMMA",
+              "witnesses": []
+            },
+            {
+              "left": "BETA",
+              "possible": [],
+              "right": "GAMMA",
+              "witnesses": []
+            }
+          ],
+          "world_count": 0,
+          "worlds_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "input_root": "da1dffbd619fc9c0258d26496064f1717ba4ed5c52eb5239f4a3984120df7697",
+        "report": {
+          "constraints": {
+            "pairs": [
+              {
+                "left": "ALPHA",
+                "relations": [
+                  "BEFORE"
+                ],
+                "right": "BETA"
+              },
+              {
+                "left": "ALPHA",
+                "relations": [
+                  "AFTER"
+                ],
+                "right": "GAMMA"
+              },
+              {
+                "left": "BETA",
+                "relations": [
+                  "BEFORE"
+                ],
+                "right": "GAMMA"
+              }
+            ]
+          },
+          "source": {
+            "body": "Fictional requirements, not actual observed events. ALPHA, BETA and GAMMA are proper intervals.\nALPHA must finish strictly before BETA starts.\nBETA must finish strictly before GAMMA starts.\nGAMMA must finish strictly before ALPHA starts.\nAll three requirements are simultaneously mandatory. None overrides another.\n",
+            "hash": "74eb3d7d121461320eeaf45d0986f30462475d9bf2576db7d2cfd3f3e2375c26",
+            "http": 200,
+            "status": "OK",
+            "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/contradictory.txt"
+          },
+          "spec": {
+            "contract": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+            "events": [
+              "ALPHA",
+              "BETA",
+              "GAMMA"
+            ],
+            "policy": "temporal-possibility-atlas-v1",
+            "source": {
+              "sha256": "74eb3d7d121461320eeaf45d0986f30462475d9bf2576db7d2cfd3f3e2375c26",
+              "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/contradictory.txt"
+            }
+          }
+        },
+        "root": "5b53cfd252428d5b1196a015a1087f68344c62447fb78677aacd6289668e7d17",
+        "status": "INCONSISTENT"
+      }
+    },
+    "unknown": {
+      "key": "bc935b66ff17280415d6173e78f1c8d63aaed45615b95d426f2d4435e5b98a2c",
+      "state": {
+        "envelope": {
+          "pairs": [
+            {
+              "left": "ALPHA",
+              "possible": [
+                "BEFORE",
+                "MEETS",
+                "OVERLAPS",
+                "STARTS",
+                "DURING",
+                "FINISHES",
+                "EQUALS",
+                "FINISHED_BY",
+                "CONTAINS",
+                "STARTED_BY",
+                "OVERLAPPED_BY",
+                "MET_BY",
+                "AFTER"
+              ],
+              "right": "BETA",
+              "witnesses": [
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "relation": "BEFORE"
+                },
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    1,
+                    2
+                  ],
+                  "relation": "MEETS"
+                },
+                {
+                  "ranks": [
+                    0,
+                    2,
+                    1,
+                    3
+                  ],
+                  "relation": "OVERLAPS"
+                },
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    0,
+                    2
+                  ],
+                  "relation": "STARTS"
+                },
+                {
+                  "ranks": [
+                    1,
+                    2,
+                    0,
+                    3
+                  ],
+                  "relation": "DURING"
+                },
+                {
+                  "ranks": [
+                    1,
+                    2,
+                    0,
+                    2
+                  ],
+                  "relation": "FINISHES"
+                },
+                {
+                  "ranks": [
+                    0,
+                    1,
+                    0,
+                    1
+                  ],
+                  "relation": "EQUALS"
+                },
+                {
+                  "ranks": [
+                    0,
+                    2,
+                    1,
+                    2
+                  ],
+                  "relation": "FINISHED_BY"
+                },
+                {
+                  "ranks": [
+                    0,
+                    3,
+                    1,
+                    2
+                  ],
+                  "relation": "CONTAINS"
+                },
+                {
+                  "ranks": [
+                    0,
+                    2,
+                    0,
+                    1
+                  ],
+                  "relation": "STARTED_BY"
+                },
+                {
+                  "ranks": [
+                    1,
+                    3,
+                    0,
+                    2
+                  ],
+                  "relation": "OVERLAPPED_BY"
+                },
+                {
+                  "ranks": [
+                    1,
+                    2,
+                    0,
+                    1
+                  ],
+                  "relation": "MET_BY"
+                },
+                {
+                  "ranks": [
+                    2,
+                    3,
+                    0,
+                    1
+                  ],
+                  "relation": "AFTER"
+                }
+              ]
+            }
+          ],
+          "world_count": 13,
+          "worlds_root": "5e433de571745e3f00fac9e34ca8163c5bd831869aaf3a93eead9e5c0166aa24"
+        },
+        "input_root": "bc935b66ff17280415d6173e78f1c8d63aaed45615b95d426f2d4435e5b98a2c",
+        "report": {
+          "constraints": {
+            "pairs": [
+              {
+                "left": "ALPHA",
+                "relations": [
+                  "BEFORE",
+                  "MEETS",
+                  "OVERLAPS",
+                  "STARTS",
+                  "DURING",
+                  "FINISHES",
+                  "EQUALS",
+                  "FINISHED_BY",
+                  "CONTAINS",
+                  "STARTED_BY",
+                  "OVERLAPPED_BY",
+                  "MET_BY",
+                  "AFTER"
+                ],
+                "right": "BETA"
+              }
+            ]
+          },
+          "source": {
+            "body": "Fictional event vocabulary: ALPHA and BETA are proper intervals.\nThis document supplies no information about their relative timing.\nDescriptions of color and importance do not imply any temporal order.\n",
+            "hash": "6a5a7ccab04f9ade8de6ae71ccd6ed0ac60e16ecfb3dbceb47acf435c298e908",
+            "http": 200,
+            "status": "OK",
+            "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/unknown.txt"
+          },
+          "spec": {
+            "contract": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+            "events": [
+              "ALPHA",
+              "BETA"
+            ],
+            "policy": "temporal-possibility-atlas-v1",
+            "source": {
+              "sha256": "6a5a7ccab04f9ade8de6ae71ccd6ed0ac60e16ecfb3dbceb47acf435c298e908",
+              "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/unknown.txt"
+            }
+          }
+        },
+        "root": "6d4322158504c7d83ef3f0e734a72fc1a57435751849ebe11627c6e4368861cf",
+        "status": "AMBIGUOUS"
+      }
+    },
+    "ordered-bad": {
+      "key": "9e247210f3dadb9388c8d275538ec1c746d71c9b8f4a75cdacac37a9984810c4",
+      "state": {
+        "envelope": {
+          "pairs": [],
+          "world_count": 0,
+          "worlds_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "input_root": "9e247210f3dadb9388c8d275538ec1c746d71c9b8f4a75cdacac37a9984810c4",
+        "report": {
+          "constraints": {
+            "pairs": []
+          },
+          "source": {
+            "body": "Fictional scheduling specification. This is not a report of real operations.\nALPHA, BETA and GAMMA each denote one proper interval with a start before its end.\nThe whole ALPHA interval finishes strictly before BETA starts; the gap is positive.\nBETA finishes at exactly the instant GAMMA starts. They meet; they do not overlap.\nThere is no additional direct statement about ALPHA and GAMMA.\n",
+            "hash": "2f92899a0e8f25b59df862f2683f67c6cc6ca0a711ce96def8af39745f89b314",
+            "http": 200,
+            "status": "HASH_MISMATCH",
+            "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt"
+          },
+          "spec": {
+            "contract": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+            "events": [
+              "ALPHA",
+              "BETA",
+              "GAMMA"
+            ],
+            "policy": "temporal-possibility-atlas-v1",
+            "source": {
+              "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+              "url": "https://raw.githubusercontent.com/stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/ordered.txt"
+            }
+          }
+        },
+        "root": "42911f4b448917bebb080692fa68dee47455560bfa8b44224fd4c0d8c652e229",
+        "status": "HELD"
+      }
+    }
+  },
+  "queries": [
+    {
+      "key": "cd781d859154da5bb49cffd8e156973e3e3c92cbf8a22dc8111fa0490d0972c0",
+      "left": "ALPHA",
+      "right": "GAMMA",
+      "label": "BEFORE",
+      "result": {
+        "analysis_root": "07a896482a0a7e37d77f791c17828b41373572060b67767760790b3f6a161b60",
+        "answer": "NECESSARY",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": [
+          0,
+          1,
+          2,
+          3,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "key": "cd781d859154da5bb49cffd8e156973e3e3c92cbf8a22dc8111fa0490d0972c0",
+      "left": "GAMMA",
+      "right": "ALPHA",
+      "label": "AFTER",
+      "result": {
+        "analysis_root": "07a896482a0a7e37d77f791c17828b41373572060b67767760790b3f6a161b60",
+        "answer": "NECESSARY",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": [
+          0,
+          1,
+          2,
+          3,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "key": "cd781d859154da5bb49cffd8e156973e3e3c92cbf8a22dc8111fa0490d0972c0",
+      "left": "BETA",
+      "right": "GAMMA",
+      "label": "MEETS",
+      "result": {
+        "analysis_root": "07a896482a0a7e37d77f791c17828b41373572060b67767760790b3f6a161b60",
+        "answer": "NECESSARY",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": [
+          0,
+          1,
+          2,
+          3,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "key": "cd781d859154da5bb49cffd8e156973e3e3c92cbf8a22dc8111fa0490d0972c0",
+      "left": "ALPHA",
+      "right": "GAMMA",
+      "label": "OVERLAPS",
+      "result": {
+        "analysis_root": "07a896482a0a7e37d77f791c17828b41373572060b67767760790b3f6a161b60",
+        "answer": "IMPOSSIBLE",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": []
+      }
+    },
+    {
+      "key": "c85a409602af20da406535a790d389e393fa4abb7e8d3ace9f923953b6d80004",
+      "left": "ALPHA",
+      "right": "BETA",
+      "label": "OVERLAPS",
+      "result": {
+        "analysis_root": "b2c2f21cbd64959955639319bcd6949297c04eef4aa34c2b7e2bf13d32c0d5b6",
+        "answer": "POSSIBLE",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": [
+          0,
+          2,
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "key": "c85a409602af20da406535a790d389e393fa4abb7e8d3ace9f923953b6d80004",
+      "left": "ALPHA",
+      "right": "BETA",
+      "label": "EQUALS",
+      "result": {
+        "analysis_root": "b2c2f21cbd64959955639319bcd6949297c04eef4aa34c2b7e2bf13d32c0d5b6",
+        "answer": "IMPOSSIBLE",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": []
+      }
+    },
+    {
+      "key": "da1dffbd619fc9c0258d26496064f1717ba4ed5c52eb5239f4a3984120df7697",
+      "left": "ALPHA",
+      "right": "BETA",
+      "label": "BEFORE",
+      "result": {
+        "analysis_root": "5b53cfd252428d5b1196a015a1087f68344c62447fb78677aacd6289668e7d17",
+        "answer": "NO_CLAIM",
+        "reason": "INCONSISTENT",
+        "witness": []
+      }
+    },
+    {
+      "key": "bc935b66ff17280415d6173e78f1c8d63aaed45615b95d426f2d4435e5b98a2c",
+      "left": "ALPHA",
+      "right": "BETA",
+      "label": "BEFORE",
+      "result": {
+        "analysis_root": "6d4322158504c7d83ef3f0e734a72fc1a57435751849ebe11627c6e4368861cf",
+        "answer": "POSSIBLE",
+        "reason": "DOCUMENT_CONSTRAINTS",
+        "witness": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "key": "9e247210f3dadb9388c8d275538ec1c746d71c9b8f4a75cdacac37a9984810c4",
+      "left": "ALPHA",
+      "right": "BETA",
+      "label": "BEFORE",
+      "result": {
+        "analysis_root": "42911f4b448917bebb080692fa68dee47455560bfa8b44224fd4c0d8c652e229",
+        "answer": "NO_CLAIM",
+        "reason": "HELD",
+        "witness": []
+      }
+    }
+  ],
+  "final_readback_verified": true,
+  "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+  "source": {
+    "address": "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+    "source_match": true,
+    "sha256": "4d7f6a5a87dc890b266f64ff9db5c8e92816bd34c2bd05a10bb41481ea7ad38c"
+  },
+  "transport_incidents": [
+    {
+      "kind": "NO_HASH_CAPTURED",
+      "intent": {
+        "step": "analyze-unknown",
+        "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "expected": "SUCCESS",
+        "cli_arguments": [
+          "write",
+          "0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A",
+          "analyze",
+          "--args",
+          "unknown",
+          "stoneforger10/temporal-possibility-atlas/38547d7d41baa5fb0625bbbfd612068fb323861f/examples/unknown.txt",
+          "6a5a7ccab04f9ade8de6ae71ccd6ed0ac60e16ecfb3dbceb47acf435c298e908",
+          "ALPHA,BETA"
+        ],
+        "nonce_before": "0x17c",
+        "broadcast_unknown": true,
+        "verified": false
+      },
+      "audit": {
+        "checked_at": "2026-10-23T11:43:52.869Z",
+        "chain_id": 61999,
+        "latest": "0x17c",
+        "pending": "0x17c",
+        "known_contract_hashes": [
+          "0x304738dcf407767b13fc4bb8bd70be3238822ebb5d5bcf765d0c21cde14579d0",
+          "0x475b4368954e67ebea076b1dc16d4d5d97bee72acf61a4cb795ed0d525967c45",
+          "0xf4977283a0e54e687334fc688f8edf1c2132c9ed2aa0c540134115e0a7753b40",
+          "0xfdc0870e48e936b3c8a16b81d2b671a611666786d7f2e074d537c488b8ba7309"
+        ],
+        "request_absent": true,
+        "source_match": true
+      },
+      "note": "No acceptance observed after manual history inspection and repeated unchanged nonce checks. Original attempt is not a transaction proof. Exact caller nonce binding prevents duplicate state effects; final contract history must match the proof ledger."
+    }
+  ],
+  "rejected_requests_absent": true,
+  "contract_history_matched": true,
+  "voting_metadata_verified": true
+}

@@ -46,7 +46,11 @@ export async function receipt(hash,expected='SUCCESS',message){
   ...(message?{expected_error_matched:decoded.includes(message)}:{})};
  if(tx.status==='FINALIZED'&&expected==='SUCCESS'&&leader?.execution_result==='SUCCESS'&&tx.result_name==='MAJORITY_DISAGREE')return {...result,committed:false};
  if(tx.status!=='FINALIZED'||leader?.execution_result!==expected||tx.result_name!=='MAJORITY_AGREE'||(message&&!decoded.includes(message)))throw Error('Receipt unverified');
- return {...result,committed:expected==='SUCCESS'};
+ const votes=Object.values(tx.consensus_data?.votes??{}),agree=votes.filter(x=>x==='agree').length;
+ if(tx.leader_only!==false||!Number.isInteger(tx.num_of_initial_validators)||tx.num_of_initial_validators<3||agree<2)throw Error('Independent voting metadata not established');
+ return {...result,committed:expected==='SUCCESS',leader_only:false,initial_validators:tx.num_of_initial_validators,
+  agree_votes:agree,idle_votes:votes.filter(x=>x==='idle').length,disagree_votes:votes.filter(x=>x==='disagree').length,
+  validator_execution_seen:tx.consensus_data.leader_receipt.some(x=>x.mode==='validator')};
 }
 export async function source(address){
  const norm=x=>x.replace(/\r\n/g,'\n').trimEnd()+'\n';

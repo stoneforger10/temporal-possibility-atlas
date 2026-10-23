@@ -31,6 +31,7 @@ Example: ALPHA before BETA and BETA meets GAMMA makes ALPHA-before-GAMMA necessa
 | Existing mechanism | Why this is not a domain rename |
 | --- | --- |
 | DynamicResearchCommons / DynamicLearningPath | No mutable graph, dependency ordering proposal, owner approval, sequence advancement or versioned head. |
+| TemporalDataWeave | No ISO-date extraction, timeline append, parent state transition or freeze lifecycle. This computes all possible relative orders of proper intervals, not one later-date timeline head. |
 | DimensionalTermKernel | No quantities, rational conversion, affine temperature points, typed arithmetic evaluator or calculation-record workflow. |
 | SourceTariffVM / BoundedPolicyCompiler | No pricing meters, program opcodes, generated Boolean decision function or executable policy. |
 | OrdinalEndowmentSwap | No participant endowment, consent lifecycle, allocation or ownership transfer. |
@@ -59,16 +60,19 @@ The JavaScript oracle enumerates a Cartesian space independently; it imports nei
 
 Use only gasless `studionet` (chain 61999) and an unlocked dedicated encrypted CLI test account. No key export, mainnet funding or value transfer. Publish fixtures first, then pass their full commit to:
 
+The deployment runner uses a separately installed GenLayer CLI 0.39.2, not a package dependency. On a fresh checkout, set `TPA_CLI_PATH` to that installation's absolute `genlayer/dist/index.js` and unlock the dedicated `studio-proof-deployer` account in the native CLI. For a global CLI installation, the path is `Join-Path (npm root -g) 'genlayer/dist/index.js'`. The bundled default path is a development-workspace fallback; it is not required when the environment override is set. `TPA_NATIVE_HTTP` enables the Windows HTTPS transport only; it does not contain credentials.
+
 ```powershell
 $env:TPA_NATIVE_HTTP='1' # Windows fallback for this endpoint only
 node --require ./scripts/native-http.cjs scripts/complete-proofs.mjs FULL_FIXTURE_COMMIT
+node --require ./scripts/native-http.cjs scripts/enrich-votes.mjs
 node --require ./scripts/native-http.cjs scripts/verify-live.mjs
 node scripts/render-proofs.mjs
 ```
 
 The journal saves intent/nonce before broadcast and a known hash immediately. A known hash is checked, never blindly resent. Unknown broadcast outcomes stop for history inspection. Finalization alone is not success: each proof checks leader execution and validator agreement. Expected reverts remain labeled ERROR, not successful business operations. Signing uses the CLI's native encrypted account without exposing its key. Helpers set StudioNet/account process-locally, not by changing global configuration.
 
-Publication status and finalized transaction evidence belong in `LIVE_PROOFS.md` once independently checked. Do not treat this workflow description as proof of a deployment.
+Live gasless StudioNet deployment: [0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A](https://explorer-studio.genlayer.com/address/0x941C78C7aFA3a067C76CAfc72ECA192510d3C44A). See [the proof matrix](LIVE_PROOFS.md), [machine-readable receipts/state](PROOFS.json) and [ready-to-fill submission](SUBMISSION.md). Ten finalized transactions cover six successful executions and four expected rejections. The source matches the deployed code. Analysis outcomes are DETERMINED (one ordering), AMBIGUOUS (three), INCONSISTENT (none), unspecified timing (thirteen), and HELD for a hash mismatch. Readbacks are not extra transactions; MAJORITY_AGREE is not a claim of unanimity. One interrupted CLI attempt is preserved as an audited transport incident, not a receipt proof; final contract history matches the ten known hashes.
 
 ## Limits
 
